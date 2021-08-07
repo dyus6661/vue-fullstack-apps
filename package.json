@@ -1,0 +1,22 @@
+{
+  "name": "vue-fullstack",
+  "version": "1.0.0",
+  "description": "Apps from Vue Fullstack Book",
+  "scripts": {
+    "run:custom-events": "lite-server -c custom-events/bs-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyus6661/vue-fullstack-apps.git"
+  },
+  "keywords": ["Vue", "Vue FullStack"],
+  "author": "dyus6661",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dyus6661/vue-fullstack-apps/issues"
+  },
+  "homepage": "https://github.com/dyus6661/vue-fullstack-apps#readme",
+  "dependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
