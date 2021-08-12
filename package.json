@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Apps from Vue Fullstack Book",
   "scripts": {
-    "run:custom-events": "lite-server -c custom-events/bs-config.js"
+    "app:note-taking": "lite-server -c note-taking/bs-config.js"
   },
   "repository": {
     "type": "git",
