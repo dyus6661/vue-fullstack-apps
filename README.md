@@ -3,5 +3,5 @@ Apps from Vue Fullstack Book
 
 ## Usage:
 ```bash
-npm run run:app-name
+npm run app:app-name
 ```
