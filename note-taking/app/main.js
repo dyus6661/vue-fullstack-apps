@@ -58,10 +58,8 @@ const inputComponent = {
     },
     methods: {
         monitorEnterkey() {
-            EventBus.$emit("add-note", {
-                note: this.input,
-                timestamp: (new Date).toLocaleString()
-            });
+            this.$store.dispatch("addNote", this.input);
+            this.$store.dispatch("addTimestamp", (new Date).toLocaleString());
             this.input = "";
         }
     }
@@ -69,13 +67,10 @@ const inputComponent = {
 
 const noteCountComponent = {
     template: `<div lass="note-count">Note ount: <strong>{{ noteCount }}</strong></div>`,
-    data() {
-        return {
-            noteCount: 0
-        };
-    },
-    created() {
-        EventBus.$on("add-note", event => this.noteCount++);
+    computed: {
+        noteCount() {
+            return this.$store.getters.getNoteCount;
+        }
     }
 };
 
@@ -87,17 +82,14 @@ new Vue({
         "note-count-component": noteCountComponent
     },
     data: {
-        notes: [],
-        timestamps: [],
         placeholder: "Enter a note"
     },
-    methods: {
-        addNote($event) {
-            this.notes.push($event.note);
-            this.timestamps.push($event.timestamp);
+    computed: {
+        notes() {
+            return this.$store.getters.getNotes
+        },
+        timestamps() {
+            return this.$store.getters.getTimestamps;
         }
-    },
-    created() {
-        EventBus.$on("add-note", event => this.addNote(event));
     }
 });
