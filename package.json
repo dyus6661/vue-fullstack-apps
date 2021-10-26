@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Apps from Vue Fullstack Book",
   "scripts": {
-    "app:note-taking": "lite-server -c note-taking/bs-config.js"
+    "app:note-taking": "lite-server -c note-taking/bs-config.js",
+	"app:form-handling": "lite-server -c form-handling/bs-config.js"
   },
   "repository": {
     "type": "git",
