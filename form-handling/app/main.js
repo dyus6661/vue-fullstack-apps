@@ -1,34 +1,25 @@
-const ButtonRow = {
+const InputForm = {
   template: `
-  <div>
-    <button @click="onButtonClick"
-    name="button-hoodie"
-    value="fullstack-hoodie"
-    class="ui button">Hoodie</button>
-    <button @click="onButtonClick"
-    name="button-tee"
-    value="fullstack-tee"
-    class="ui button">Tee</button>
-    <button @click="onButtonClick"
-    name="button-fitted-cap"
-    value="fullstack-fitted-cap"
-    class="ui button">Fitted ap</button>
-    <button @click="onButtonClick"
-    name="button-jacket"
-    value="fullstack-jacket"
-    class="ui button">Jacket</button>
-</div>
+  <div class="input-form">
+    <form @submit="submitForm" class="ui form">
+      <div class="field">
+        <input ref="newItem" type="text" placeholder="Add an item!">
+      </div>
+      <button class="ui button">Submit</button>
+    </form>
+  <div>  
   `,
   methods: {
-    onButtonClick(e) {
-      console.log(e.target.value);
+    submitForm(e) {
+      e.preventDefault();
+      console.log(this.$refs.newItem.value);
     }
   }
 };
 
 const app = new Vue({
   components: {
-    "button-row": ButtonRow
+    "input-form": InputForm
   }
 });
 app.$mount("#app");
